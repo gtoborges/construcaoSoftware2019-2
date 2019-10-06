@@ -1,0 +1,22 @@
+{
+  "name": "csgoapp-server",
+  "version": "1.0.0",
+  "description": "project created for a college subject",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gtoborges/construcaoSoftware2019-2.git"
+  },
+  "author": "Augusto Araujo Borges, Max Stival, Willian Cruvinel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gtoborges/construcaoSoftware2019-2/issues"
+  },
+  "homepage": "https://github.com/gtoborges/construcaoSoftware2019-2#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
