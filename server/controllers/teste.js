@@ -1,58 +1,93 @@
 const service = require('../services')
 
-const testarGet = (req, res) => {
+const testarGet = async (req, res) => {
 
   let test = 'Método Get'
 
-  service.teste.testar(test).then(response => {
-    console.log('Response arrived')
+  // Maneira de responder o servidor com promise.then
+
+  // service.teste.testar(test).then(response => {
+  //   console.log('Response arrived')
+  //   res.status(200).send(response)
+  // }).catch( err => {
+  //   console.log('Error on the service')
+  //   res.status(500).send(err)
+  // })
+
+  // Ṃaneira de responder o servidor com async/await (preferível - adotar como padrão)
+  try {
+    console.log('Request received')
+    let response = await service.teste.testar(test)
     res.status(200).send(response)
-  }).catch( err => {
-    console.log('Error on the service')
+  } catch (err) {
     res.status(500).send(err)
-  })
+  }
 
 }
 
-const testarPost = (req, res) => {
+const testarPost = async (req, res) => {
   
   let test = 'Método Post'
 
-  service.teste.testar(test).then(response => {
-    console.log('Response arrived')
+  // service.teste.testar(test).then(response => {
+  //   console.log('Response arrived')
+  //   res.status(200).send(response)
+  // }).catch( err => {
+  //   console.log('Error on the service')
+  //   res.status(500).send(err)
+  // })
+
+  try {
+    console.log('Request received')
+    let response = await service.teste.testar(test)
     res.status(200).send(response)
-  }).catch( err => {
-    console.log('Error on the service')
+  } catch (err) {
     res.status(500).send(err)
-  })
+  }
 
 }
 
-const testarPut = (req, res) => {
+const testarPut = async (req, res) => {
 
   let test = 'Método Put'
 
-  service.teste.testar(test).then(response => {
-    console.log('Response arrived')
+  // service.teste.testar(test).then(response => {
+  //   console.log('Response arrived')
+  //   res.status(200).send(response)
+  // }).catch( err => {
+  //   console.log('Error on the service')
+  //   res.status(500).send(err)
+  // })
+
+  try {
+    console.log('Request received')
+    let response = await service.teste.testar(test)
     res.status(200).send(response)
-  }).catch( err => {
-    console.log('Error on the service')
+  } catch (err) {
     res.status(500).send(err)
-  })
+  }
 
 }
 
-const testarDelete = (req, res) => {
+const testarDelete = async (req, res) => {
 
   let test = 'Método Delete'
 
-  service.teste.testar(test).then(response => {
-    console.log('Response arrived')
+  // service.teste.testar(test).then(response => {
+  //   console.log('Response arrived')
+  //   res.status(200).send(response)
+  // }).catch( err => {
+  //   console.log('Error on the service')
+  //   res.status(500).send(err)
+  // })
+
+  try {
+    console.log('Request received')
+    let response = await service.teste.testar(test)
     res.status(200).send(response)
-  }).catch( err => {
-    console.log('Error on the service')
+  } catch (err) {
     res.status(500).send(err)
-  })
+  }
 
 }
 
