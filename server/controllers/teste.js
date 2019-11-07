@@ -6,13 +6,13 @@ const testarGet = async (req, res) => {
 
   // Maneira de responder o servidor com promise.then
 
-  // service.teste.testar(test).then(response => {
-  //   console.log('Response arrived')
-  //   res.status(200).send(response)
-  // }).catch( err => {
-  //   console.log('Error on the service')
-  //   res.status(500).send(err)
-  // })
+  /*service.teste.testar(test).then(response => {
+    console.log('Response arrived')
+    res.status(200).send(response)
+  }).catch( err => {
+    console.log('Error on the service')
+    res.status(500).send(err)
+  })*/
 
   // Ṃaneira de responder o servidor com async/await (preferível - adotar como padrão)
   try {
