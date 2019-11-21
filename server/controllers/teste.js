@@ -27,8 +27,10 @@ const testarGet = async (req, res) => {
 
 const testarPost = async (req, res) => {
   
-  let test = 'Método Post'
-
+  let test = {
+    descricaoTeste: 'teste de conexão como banco de dados',
+    dataTeste: new Date()
+  }
   // service.teste.testar(test).then(response => {
   //   console.log('Response arrived')
   //   res.status(200).send(response)
@@ -39,9 +41,10 @@ const testarPost = async (req, res) => {
 
   try {
     console.log('Request received')
-    let response = await service.teste.testar(test)
+    let response = await service.teste.testarSalvarNoBanco(test)
     res.status(200).send(response)
   } catch (err) {
+    console.log(err)
     res.status(500).send(err)
   }
 
