@@ -1,7 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
   return sequelize.define('teste', {
     idTeste: {
-      type: DataTypes.INTEGER(11),
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true

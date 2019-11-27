@@ -3,10 +3,10 @@
 -- ----------------------------------------------------------------------------------------------------------
 
 CREATE TABLE IF NOT EXISTS `teste` (
-  `idTeste` INT NOT NULL AUTO_INCREMENT,
+  `idTeste` CHAR(36) CHARACTER SET 'utf8' COLLATE 'utf8_bin' NOT NULL,
   `descricaoTeste` VARCHAR(100) NOT NULL,
   `dataTeste` DATE NOT NULL,
-  `dataCriacao` DATE NOT NULL,
-  `dataAlteracao` DATE NOT NULL,
+  `dataCriacao` DATETIME NOT NULL,
+  `dataAlteracao` DATETIME NOT NULL,
   PRIMARY KEY (`idTeste`)
 );
