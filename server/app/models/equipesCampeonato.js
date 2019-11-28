@@ -66,11 +66,11 @@ module.exports = (sequelize, DataTypes) => {
     },
     dataCriacao: {
       type: DataTypes.DATE,
-      allouNull: false
+      allowNull: false
     },
     dataAlteracao: {
       type: DataTypes.DATE,
-      allouNull: false
+      allowNull: false
     }
   }, {
     tableName: 'equipesCampeonato',

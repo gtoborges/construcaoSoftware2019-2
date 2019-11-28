@@ -12,11 +12,11 @@ module.exports = (sequelize, DataTypes) => {
     },
     dataInicial: {
       type: DataTypes.DATEONLY,
-      allouNull: false
+      allowNull: false
     },
     dataFinal: {
       type: DataTypes.DATEONLY,
-      allouNull: false
+      allowNull: false
     },
     qntdTimesParticipantes: {
       type: DataTypes.INTEGER(11),
@@ -37,23 +37,23 @@ module.exports = (sequelize, DataTypes) => {
     },
     local: {
       type: DataTypes.CHAR(50),
-      allouNull: true
+      allowNull: true
     },
     descricao: {
       type: DataTypes.CHAR(100),
-      allouNull: true
+      allowNull: true
     },
     dataNascimento: {
       type: DataTypes.DATEONLY,
-      allouNull: true
+      allowNull: true
     },
     dataCriacao: {
       type: DataTypes.DATE,
-      allouNull: false
+      allowNull: false
     },
     dataAlteracao: {
       type: DataTypes.DATE,
-      allouNull: false
+      allowNull: false
     }
   }, {
     tableName: 'campeonato',

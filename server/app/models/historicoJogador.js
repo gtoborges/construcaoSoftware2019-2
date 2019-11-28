@@ -26,19 +26,19 @@ module.exports = (sequelize, DataTypes) => {
     },
     dataEntrada: {
       type: DataTypes.DATEONLY,
-      allouNull: false
+      allowNull: false
     },
     dataNascimento: {
       type: DataTypes.DATEONLY,
-      allouNull: true
+      allowNull: true
     },
     dataCriacao: {
       type: DataTypes.DATE,
-      allouNull: false
+      allowNull: false
     },
     dataAlteracao: {
       type: DataTypes.DATE,
-      allouNull: false
+      allowNull: false
     }
   }, {
     tableName: 'historicoJogador',

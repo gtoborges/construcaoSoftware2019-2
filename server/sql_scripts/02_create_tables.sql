@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `jogador` (
 -- tabela historicoJogador
 -- ----------------------------------------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `historicoJogador` (
-  `idHistoricoJogador` INT NOT NULL
+  `idHistoricoJogador` INT NOT NULL AUTO_INCREMENT,
   `idJogadorFK` INT NOT NULL,
   `idEquipeFK` INT NOT NULL,
   `dataEntrada` DATE NOT NULL,
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `historicoJogador` (
 -- tabela campeonato
 -- ----------------------------------------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `campeonato` (
-  `idCampeonato` INT NOT NULL,
+  `idCampeonato` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(50) NOT NULL,
   `dataInicial` DATE NOT NULL,
   `dataFinal` DATE NOT NULL,
@@ -106,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `campeonato` (
 -- tabela equipesCampeonato
 -- ----------------------------------------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `equipesCampeonato` (
-  `idEquipeCampeonato` INT NOT NULL,
+  `idEquipeCampeonato` INT NOT NULL AUTO_INCREMENT,
   `idEquipeFK` INT NOT NULL,
   `idJogador1FK` INT NULL,
   `idJogador2FK` INT NULL,
@@ -174,7 +174,7 @@ CREATE TABLE IF NOT EXISTS `campeonatoXequipe` (
 -- tabela distribuicaoPremiacaoCampeonato
 -- ----------------------------------------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `distribuicaoPremiacaoCampeonato` (
-  `idDistribuicao` INT NOT NULL,
+  `idDistribuicao` INT NOT NULL AUTO_INCREMENT,
   `colocacao` INT NOT NULL,
   `premiacao` DECIMAL(10,2) NOT NULL,
   `dataCriacao` DATETIME NOT NULL,
@@ -208,7 +208,7 @@ CREATE TABLE IF NOT EXISTS `campeonatoXdistribuicao`(
 -- tabela mapas
 -- ----------------------------------------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mapas` (
-  `idMapa` INT NOT NULL,
+  `idMapa` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(40) NOT NULL,
   `dataCriacao` DATETIME NOT NULL,
   `dataAlteracao` DATETIME NOT NULL,
@@ -219,7 +219,7 @@ CREATE TABLE IF NOT EXISTS `mapas` (
 -- tabela partidas
 -- ----------------------------------------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `partidas` (
-  `idPartida` INT NOT NULL,
+  `idPartida` INT NOT NULL AUTO_INCREMENT,
   `data` DATETIME NOT NULL,
   `categoria` ENUM('LAN','ONLINE') NOT NULL,
   `idCampeonatoFK` INT NULL,
@@ -285,7 +285,7 @@ CREATE TABLE IF NOT EXISTS `jogadorPartida` (
   `idJogadorFK` INT NULL,
   `qntdVitimas` INT NULL,
   `qntdMortes` INT NULL,
-  `qntdAssistencia` INT NULL,
+  `qntdAssistencias` INT NULL,
   `porcentagemHeadshot` INT NULL,
   `mediaDanoPorRodada` INT NULL,
   `idEquipeFK` INT NOT NULL,

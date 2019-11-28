@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     dataNascimento: {
       type: DataTypes.DATEONLY,
-      allouNull: false
+      allowNull: false
     },
     idPais: {
       field: paisDeOrigemFK,
@@ -42,11 +42,11 @@ module.exports = (sequelize, DataTypes) => {
     },
     dataCriacao: {
       type: DataTypes.DATE,
-      allouNull: false
+      allowNull: false
     },
     dataAlteracao: {
       type: DataTypes.DATE,
-      allouNull: false
+      allowNull: false
     }
   }, {
     tableName: 'jogador',
