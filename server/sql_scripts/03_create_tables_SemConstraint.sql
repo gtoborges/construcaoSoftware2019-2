@@ -47,15 +47,16 @@ CREATE TABLE IF NOT EXISTS `jogador` (
 -- tabela historicoJogador
 -- ----------------------------------------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `historicoJogador` (
-  `idJogador` INT NOT NULL,
-  `idEquipe` INT NOT NULL,
+  `idHistoricoJogador` INT NOT NULL
+  `idJogadorFK` INT NOT NULL,
+  `idEquipeFK` INT NOT NULL,
   `dataEntrada` DATE NOT NULL,
   `dataSaida` DATE NULL,
   `dataCriacao` DATETIME NOT NULL,
   `dataAlteracao` DATETIME NOT NULL,
-  PRIMARY KEY (`idJogador`),
-  FOREIGN KEY (`idJogador`) REFERENCES `jogador` (`idJogador`),
-  FOREIGN KEY (`idEquipe`) REFERENCES `equipe` (`idEquipe`)
+  PRIMARY KEY (`idHistoricoJogador`),
+  FOREIGN KEY (`idJogadorFK`) REFERENCES `jogador` (`idJogador`),
+  FOREIGN KEY (`idEquipeFK`) REFERENCES `equipe` (`idEquipe`)
 );
 
 -- ----------------------------------------------------------------------------------------------------------
