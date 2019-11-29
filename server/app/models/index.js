@@ -21,6 +21,13 @@ Object.keys(db).forEach((modelName) => {
   }
 });
 
+// Relacionamentos entre as tabelas
+
+db.jogador.hasOne(db.paises, {foreignKey: 'idPais', as: 'paisDeOrigem'})
+db.jogador.hasOne(db.equipe, {foreignKey: 'idEquipe', as: 'equipe'})
+db.equipe.hasOne(db.paises, {foreignKey: 'idPais', as: 'paisDeOrigem'})
+db.campeonato.hasOne(db.paises, {foreignKey: 'idPais', as: 'paisDeOrigem'})
+
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 

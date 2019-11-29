@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
     },
     idPais: {
-      field: paisDeOrigemFK,
+      field: 'paisDeOrigemFK',
       type: DataTypes.INTEGER(11),
       allowNull: true,
       references: {

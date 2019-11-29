@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     idCampeonato: {
-      field: idCampeonatoFK,
+      field: 'idCampeonatoFK',
       type: DataTypes.INTEGER(11),
       allowNull: true,
       references: {
@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     idMapa: {
-      field: idMapaFK,
+      field: 'idMapaFK',
       type: DataTypes.INTEGER(11),
       allowNull: false,
       references: {
@@ -73,7 +73,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true
     },
     idEquipeVitoria: {
-      field: idEquipeVitoriaFK,
+      field: 'idEquipeVitoriaFK',
       type: DataTypes.INTEGER(11),
       allowNull: true,
       references: {
@@ -82,7 +82,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     idEquipeDerrota: {
-      field: idEquipeDerrotaFK,
+      field: 'idEquipeDerrotaFK',
       type: DataTypes.INTEGER(11),
       allowNull: true,
       references: {
@@ -91,7 +91,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     idPrimeiraPartida: {
-      field: idPrimeiraPartidaFK,
+      field: 'idPrimeiraPartidaFK',
       type: DataTypes.INTEGER(11),
       allowNull: true,
       references: {

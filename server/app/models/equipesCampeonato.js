@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true
     },
     idEquipe: {
-      field: equipeFK,
+      field: 'equipeFK',
       type: DataTypes.INTEGER(11),
       allowNull: false,
       references: {
@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     idJogador1: {
-      field: idJogador1FK,
+      field: 'idJogador1FK',
       type: DataTypes.INTEGER(11),
       allowNull: true,
       references: {
@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     idJogador2: {
-      field: idJogador2FK,
+      field: 'idJogador2FK',
       type: DataTypes.INTEGER(11),
       allowNull: true,
       references: {
@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     idJogador3: {
-      field: idJogador3FK,
+      field: 'idJogador3FK',
       type: DataTypes.INTEGER(11),
       allowNull: true,
       references: {
@@ -43,7 +43,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     idJogador4: {
-      field: idJogador4FK,
+      field: 'idJogador4FK',
       type: DataTypes.INTEGER(11),
       allowNull: true,
       references: {
@@ -52,7 +52,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     idJogador5: {
-      field: idJogador5FK,
+      field: 'idJogador5FK',
       type: DataTypes.INTEGER(11),
       allowNull: true,
       references: {

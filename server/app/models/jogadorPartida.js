@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
     },
     idPartida: {
-      field: idPartidaFK,
+      field: 'idPartidaFK',
       type: DataTypes.INTEGER(11),
       allowNull: true,
       references: {
@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     idJogador: {
-      field: idJogadorFK,
+      field: 'idJogadorFK',
       type: DataTypes.INTEGER(11),
       allowNull: true,
       references: {
@@ -45,7 +45,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     idEquipe: {
-      field: equipeFK,
+      field: 'equipeFK',
       type: DataTypes.INTEGER(11),
       allowNull: false,
       references: {

@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
   return sequelize.define('distribuicaoXcampeonato', {
     idCampeonato: {
-      field: idCampeonatoFK,
+      field: 'idCampeonatoFK',
       type: DataTypes.INTEGER(11),
       allowNull: false,
       primaryKey: true,
@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     idDistribuicao: {
-      field: idDistribuicaoFK,
+      field: 'idDistribuicaoFK',
       type: DataTypes.INTEGER(11),
       allowNull: false,
       primaryKey: true,

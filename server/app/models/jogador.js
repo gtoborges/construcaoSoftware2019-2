@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
   return sequelize.define('jogador', {
-    idEquipe: {
+    idJogador: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
       primaryKey: true,
@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     idPais: {
-      field: paisDeOrigemFK,
+      field: 'paisDeOrigemFK',
       type: DataTypes.INTEGER(11),
       allowNull: true,
       references: {
@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     idEquipe: {
-      field: equipeFK,
+      field: 'equipeFK',
       type: DataTypes.INTEGER(11),
       allowNull: false,
       references: {
