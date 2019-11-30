@@ -4,10 +4,8 @@
 CREATE TABLE IF NOT EXISTS `paises` (
   `idPais` INT NOT NULL AUTO_INCREMENT,
   `pais` VARCHAR(50) NOT NULL,
-  `nacionalidade` VARCHAR(50) NOT NULL,
+  `nacionalidade` VARCHAR(50) NULL,
   `sigla` VARCHAR(3) NULL,
-  `dataCriacao` DATETIME NOT NULL,
-  `dataAlteracao` DATETIME NOT NULL,
   PRIMARY KEY (`idPais`)
 );
 
@@ -83,6 +81,7 @@ CREATE TABLE IF NOT EXISTS `campeonato` (
 -- ----------------------------------------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `equipesCampeonato` (
   `idEquipeCampeonato` INT NOT NULL AUTO_INCREMENT,
+  `idCampeonatoFK` INT NOT NULL,
   `idEquipeFK` INT NOT NULL,
   `idJogador1FK` INT NULL,
   `idJogador2FK` INT NULL,
@@ -98,46 +97,49 @@ CREATE TABLE IF NOT EXISTS `equipesCampeonato` (
   FOREIGN KEY (`idJogador2FK`) REFERENCES `jogador` (`idJogador`),
   FOREIGN KEY (`idJogador3FK`) REFERENCES `jogador` (`idJogador`),
   FOREIGN KEY (`idJogador4FK`) REFERENCES `jogador` (`idJogador`),
-  FOREIGN KEY (`idJogador5FK`) REFERENCES `jogador` (`idJogador`)
+  FOREIGN KEY (`idJogador5FK`) REFERENCES `jogador` (`idJogador`),
+  FOREIGN KEY (`idCampeonatoFK`) REFERENCES `campeonato` (`idCampeonato`)
 );
 
--- ----------------------------------------------------------------------------------------------------------
--- tabela campeonatoXequipe
--- ----------------------------------------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS `campeonatoXequipe` (
-  `idCampeonatoFK` INT NOT NULL,
-  `idEquipeCampeonatoFK` INT NOT NULL,
-  `dataCriacao` DATETIME NOT NULL,
-  `dataAlteracao` DATETIME NOT NULL,
-  PRIMARY KEY (`idCampeonatoFK`, `idEquipeCampeonatoFK`),
-  FOREIGN KEY (`idCampeonatoFK`) REFERENCES `campeonato` (`idCampeonato`),
-  FOREIGN KEY (`idEquipeCampeonatoFK`) REFERENCES `equipesCampeonato` (`idEquipeCampeonato`)
-);
+-- -- ----------------------------------------------------------------------------------------------------------
+-- -- tabela campeonatoXequipe
+-- -- ----------------------------------------------------------------------------------------------------------
+-- CREATE TABLE IF NOT EXISTS `campeonatoXequipe` (
+--   `idCampeonatoFK` INT NOT NULL,
+--   `idEquipeCampeonatoFK` INT NOT NULL,
+--   `dataCriacao` DATETIME NOT NULL,
+--   `dataAlteracao` DATETIME NOT NULL,
+--   PRIMARY KEY (`idCampeonatoFK`, `idEquipeCampeonatoFK`),
+--   FOREIGN KEY (`idCampeonatoFK`) REFERENCES `campeonato` (`idCampeonato`),
+--   FOREIGN KEY (`idEquipeCampeonatoFK`) REFERENCES `equipesCampeonato` (`idEquipeCampeonato`)
+-- );
 
 -- ----------------------------------------------------------------------------------------------------------
 -- tabela distribuicaoPremiacaoCampeonato
 -- ----------------------------------------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `distribuicaoPremiacaoCampeonato` (
   `idDistribuicao` INT NOT NULL AUTO_INCREMENT,
+  `idCampeonatoFK` INT NOT NULL,
   `colocacao` INT NOT NULL,
   `premiacao` DECIMAL(10,2) NOT NULL,
   `dataCriacao` DATETIME NOT NULL,
   `dataAlteracao` DATETIME NOT NULL,
-  PRIMARY KEY (`idDistribuicao`)
+  PRIMARY KEY (`idDistribuicao`),
+  FOREIGN KEY (`idCampeonatoFK`) REFERENCES `campeonato` (`idCampeonato`)
 );
 
--- ----------------------------------------------------------------------------------------------------------
--- tabela campeonatoXdistribuicaoPremiacaoCampeonato
--- ----------------------------------------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS `campeonatoXdistribuicao`(
-  `idCampeonatoFK` INT NOT NULL,
-  `idDistribuicaoFK` INT NOT NULL,
-  `dataCriacao` DATETIME NOT NULL,
-  `dataAlteracao` DATETIME NOT NULL,
-  PRIMARY KEY (`idDistribuicaoFK`, `idCampeonatoFK`),
-  FOREIGN KEY (`idCampeonatoFK`) REFERENCES `campeonato` (`idCampeonato`),
-  FOREIGN KEY (`idDistribuicaoFK`) REFERENCES `distribuicaoPremiacaoCampeonato` (`idDistribuicao`)
-);
+-- -- ----------------------------------------------------------------------------------------------------------
+-- -- tabela campeonatoXdistribuicaoPremiacaoCampeonato
+-- -- ----------------------------------------------------------------------------------------------------------
+-- CREATE TABLE IF NOT EXISTS `campeonatoXdistribuicao`(
+--   `idCampeonatoFK` INT NOT NULL,
+--   `idDistribuicaoFK` INT NOT NULL,
+--   `dataCriacao` DATETIME NOT NULL,
+--   `dataAlteracao` DATETIME NOT NULL,
+--   PRIMARY KEY (`idDistribuicaoFK`, `idCampeonatoFK`),
+--   FOREIGN KEY (`idCampeonatoFK`) REFERENCES `campeonato` (`idCampeonato`),
+--   FOREIGN KEY (`idDistribuicaoFK`) REFERENCES `distribuicaoPremiacaoCampeonato` (`idDistribuicao`)
+-- );
 
 
 -- ----------------------------------------------------------------------------------------------------------
@@ -146,8 +148,6 @@ CREATE TABLE IF NOT EXISTS `campeonatoXdistribuicao`(
 CREATE TABLE IF NOT EXISTS `mapas` (
   `idMapa` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(40) NOT NULL,
-  `dataCriacao` DATETIME NOT NULL,
-  `dataAlteracao` DATETIME NOT NULL,
   PRIMARY KEY (`idMapa`)
 );
 

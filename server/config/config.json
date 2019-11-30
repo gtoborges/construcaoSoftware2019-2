@@ -2,7 +2,7 @@
   "development": {
     "username": "developer",
     "password": "developer",
-    "database": "teste2",
+    "database": "teste",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "define": {
@@ -19,7 +19,9 @@
     },
     "retry": {
       "max": 3
-    }
+    },
+    "logging": true,
+    "operatorsAliases": false 
   },
   "test": {
     "username": "developer",

@@ -9,17 +9,9 @@ module.exports = (sequelize, DataTypes) => {
     nome: {
       type: DataTypes.CHAR(40),
       allowNull: false,
-    },
-    dataCriacao: {
-      type: DataTypes.DATE,
-      allowNull: false
-    },
-    dataAlteracao: {
-      type: DataTypes.DATE,
-      allowNull: false
     }
   }, {
     tableName: 'mapas',
-    timestamps: true
+    timestamps: false
   })
 }

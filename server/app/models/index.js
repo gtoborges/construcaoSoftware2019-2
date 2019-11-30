@@ -24,8 +24,16 @@ Object.keys(db).forEach((modelName) => {
 // Relacionamentos entre as tabelas
 
 db.jogador.hasOne(db.paises, {foreignKey: 'idPais', as: 'paisDeOrigem'})
-db.jogador.hasOne(db.equipe, {foreignKey: 'idEquipe', as: 'equipe'})
+// db.paises.belongsTo(db.jogador, {foreignKey: 'idPaisFK', as: 'paisDeOrigem'})
+
+
+// db.jogador.hasOne(db.equipe, {foreignKey: 'idEquipe', as: 'equipe'})
+
 db.equipe.hasOne(db.paises, {foreignKey: 'idPais', as: 'paisDeOrigem'})
+
+db.equipe.hasMany(db.jogador, {foreignKey: 'idEquipe'})
+db.jogador.belongsTo(db.equipe, {foreignKey: 'idEquipe', as: 'jogadoresDaEquipe'})
+
 db.campeonato.hasOne(db.paises, {foreignKey: 'idPais', as: 'paisDeOrigem'})
 
 db.sequelize = sequelize;

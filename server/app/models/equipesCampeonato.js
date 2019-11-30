@@ -6,6 +6,15 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true
     },
+    idCampeonato: {
+      field: 'idCampeonatoFK',
+      type: DataTypes.INTEGER(11),
+      allowNull: false,
+      references: {
+        model: 'campeonato',
+        key: 'idCampeonato'
+      }
+    },
     idEquipe: {
       field: 'equipeFK',
       type: DataTypes.INTEGER(11),

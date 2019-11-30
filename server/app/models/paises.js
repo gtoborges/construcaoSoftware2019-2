@@ -17,17 +17,9 @@ module.exports = (sequelize, DataTypes) => {
     sigla: {
       type: DataTypes.CHAR(3),
       allowNull: true
-    },
-    dataCriacao: {
-      type: DataTypes.DATE,
-      allowNull: false
-    },
-    dataAlteracao: {
-      type: DataTypes.DATE,
-      allowNull: false
     }
   }, {
     tableName: 'paises',
-    timestamps: true
+    timestamps: false
   })
 }

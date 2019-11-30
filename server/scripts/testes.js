@@ -11,25 +11,22 @@ async function testeJogador() {
         model: db.paises,
         as: 'paisDeOrigem'
       },
-      {
-        model: db.equipe,
-        as: 'equipe'
-      }
+      // {
+      //   model: db.equipe,
+      //   as: 'equipe'
+      // }
     ],
   }
 
-  let a = await db.jogador.findAll(opcoes)
-  console.log(a[0].dataValues)
-  console.log('\n\n\n')
-  console.log(a[0].equipe.dataValues)
-  console.log('\n\n\n')
-  console.log(a[0].get('paisDeOrigem').dataValues)
-  console.log('\n\n\n')
-  console.log(a.length)
+  let jogadores = await db.jogador.findAll(opcoes)
+  console.log(jogadores[3].dataValues)
+  // for(jogador of jogadores){
+  //   console.log('\n\n')
+  //   console.log(jogador.dataValues)
+  // }
 
 }
-
-// testeJogador()
+testeJogador()
 
 async function testeEquipe() {
 
@@ -53,5 +50,31 @@ async function testeEquipe() {
   console.log(b)
 
 }
+// testeEquipe()
 
-testeEquipe()
+async function criarEquipesEJogadores(){
+
+  const equipes = require("./equipes.js").equipes
+  const jogadores = require("./jogadores.js").jogadores
+
+  try {
+    let transacao = await db.sequelize.transaction({ isolationLevel: db.Sequelize.Transaction.ISOLATION_LEVELS.READ_UNCOMMITTED })
+    
+    for(equipe of equipes) {
+      await db.equipe.create(equipe, { transaction: transacao })
+    }
+
+    for(jogador of jogadores) {
+      await db.jogador.create(jogador, { transaction: transacao })
+    }
+
+    await transacao.commit();
+    // await transacao.rollback();
+  } catch (e) {
+    console.error(e)
+    await transacao.rollback();
+    throw e
+  }
+  
+}
+// criarEquipesEJogadores()
