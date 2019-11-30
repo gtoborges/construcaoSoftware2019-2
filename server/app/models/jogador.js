@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
       references: {
         model: 'paises',
-        key: 'idPais'
+        key: 'idPais',
       }
     },
     idEquipe: {

@@ -11,22 +11,22 @@ async function testeJogador() {
         model: db.paises,
         as: 'paisDeOrigem'
       },
-      // {
-      //   model: db.equipe,
-      //   as: 'equipe'
-      // }
+      {
+        model: db.equipe,
+        as: 'equipe'
+      }
     ],
+    raw: true,
   }
 
   let jogadores = await db.jogador.findAll(opcoes)
-  console.log(jogadores[3].dataValues)
-  // for(jogador of jogadores){
-  //   console.log('\n\n')
-  //   console.log(jogador.dataValues)
-  // }
+  for(jogador of jogadores){
+    console.log('\n\n')
+    console.log(jogador)
+  }
 
 }
-testeJogador()
+// testeJogador()
 
 async function testeEquipe() {
 
@@ -37,20 +37,54 @@ async function testeEquipe() {
         as: 'paisDeOrigem'
       },
     ],
+    raw: true
   }
 
-  let a = await db.equipe.findAll(opcoes)
-  console.log(a[0].dataValues)
-  console.log('\n\n\n')
-  console.log(a[1].dataValues)
-  console.log('\n\n\n')
-  console.log(a.length)
-
-  let b = await db.jogador.findAll({where: {idEquipe: a[0].idEquipe}, raw: true})
-  console.log(b)
+  let equipes = await db.equipe.findAll(opcoes)
+  for(equipe of equipes){
+    console.log('\n\n')
+    console.log(equipe)
+  }
 
 }
-// testeEquipe()
+testeEquipe()
+
+async function jogadoresDaEquipe() {
+
+  let opcoes = {
+    include: [
+      {
+        model: db.paises,
+        as: 'paisDeOrigem'
+      },
+      {
+        model: db.jogador,
+        as: 'jogadores',
+        include: [
+          {
+            model: db.paises,
+            as: 'paisDeOrigem'
+          }
+        ]
+      },
+    ],
+  }
+
+  let equipes = await db.equipe.findAll(opcoes)
+  // console.log(equipes[0].dataValues)
+  // console.log(equipes[0].jogadores)
+  // console.log(equipes[0].jogadores[0].paisDeOrigem.dataValues)
+  for(equipe of equipes){
+    console.log('\n\n')
+    console.log(equipe.dataValues)
+    for(jogador of equipe.jogadores){
+      console.log('\n')
+      console.log(jogador.dataValues)
+    }
+  }
+
+}
+jogadoresDaEquipe()
 
 async function criarEquipesEJogadores(){
 
@@ -77,4 +111,4 @@ async function criarEquipesEJogadores(){
   }
   
 }
-// criarEquipesEJogadores()
+criarEquipesEJogadores()
