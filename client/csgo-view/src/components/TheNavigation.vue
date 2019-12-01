@@ -4,9 +4,11 @@
     <v-img src="../assets/csgo-logo.png" max-height="100" max-width="130" @click="$router.push({ name: 'home'})"></v-img>
 
     <v-toolbar-items>
-      <v-btn text :to="{ name: 'home' }">Home</v-btn>
-      <v-btn text :to="{ name: 'teste1' }">Teste 1</v-btn>
-      <v-btn text :to="{ name: 'teste2' }">Teste 2</v-btn>
+      <v-btn text :to="{ name: 'home' }">Inicio</v-btn>
+      <v-btn text :to="{ name: 'home' }">Campeonatos</v-btn>
+      <v-btn text :to="{ name: 'home' }">Partidas</v-btn>
+      <v-btn text :to="{ name: 'home' }">Equipes</v-btn>
+      <v-btn text :to="{ name: 'jogadores' }">Jogadores</v-btn>
     </v-toolbar-items>
 
   </v-app-bar>

@@ -6,7 +6,6 @@ const Op = Sequelize.Op
 const buscarJogador = async (idJogador) => {
 
   if(!idJogador) {
-    console.log('lalala')
     throw new Error('Não foi possível buscar por um jogador!')
   }
 
@@ -34,6 +33,29 @@ const buscarJogador = async (idJogador) => {
   return jogador
 }
 
+const listarJogadores = async () => {
+
+  let opcoes = {
+    attributes: ['nome', 'sobrenome', 'apelido', 'dataNascimento'],
+    include: [
+      {
+        model: db.paises,
+        as: 'paisDeOrigem',
+        attributes: ['pais']
+      },
+      {
+        model: db.equipe,
+        as: 'equipe',
+        attributes: ['nome', 'tag']
+      }
+    ],
+    order: [['nome', 'ASC']]
+  }
+
+  return db.jogador.findAll(opcoes)
+}
+
 module.exports = {
-  buscarJogador
+  buscarJogador,
+  listarJogadores
 }
