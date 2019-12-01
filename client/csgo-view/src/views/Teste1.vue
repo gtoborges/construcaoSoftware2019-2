@@ -13,3 +13,25 @@
     </v-flex>
   </v-layout>
 </template>
+<script>
+import http from '../utils/axiosConfig'
+
+export default {
+  props: {
+
+  },
+  data() {
+    return {
+      infos: 10
+    }
+  },
+  created() {
+    console.log(this.infos)
+    http.get('/teste').then(resposta => {
+      console.log(resposta)
+    }).catch(err => {
+      console.log(err)
+    })
+  }
+}
+</script>

@@ -4,7 +4,8 @@
   "description": "project created for a college subject",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --inspect app.js"
   },
   "repository": {
     "type": "git",
@@ -17,8 +18,10 @@
   },
   "homepage": "https://github.com/gtoborges/construcaoSoftware2019-2#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mysql2": "^2.0.1",
+    "nodemon": "^2.0.1",
     "sequelize": "^5.21.2"
   },
   "devDependencies": {
