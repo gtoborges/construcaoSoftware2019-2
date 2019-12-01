@@ -25,3 +25,8 @@ export default {
   }),
 };
 </script>
+
+<style lang="scss">
+@import '~sweetalert2/src/variables'; 
+@import '~sweetalert2/src/sweetalert2';
+</style>
