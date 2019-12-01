@@ -36,7 +36,7 @@ const buscarJogador = async (idJogador) => {
 const listarJogadores = async () => {
 
   let opcoes = {
-    attributes: ['nome', 'sobrenome', 'apelido', 'dataNascimento'],
+    attributes: ['idJogador', 'nome', 'sobrenome', 'apelido', 'dataNascimento'],
     include: [
       {
         model: db.paises,
