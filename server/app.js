@@ -11,11 +11,13 @@ app.use(cors())
 //importação dos arquivos de rotas
 const teste = require('./routes/teste')
 const jogador = require('./routes/jogador')
+const equipe = require('./routes/equipe')
 
 //rotas da aplicação
 
 router.use('/teste', teste)
 router.use('/jogador', jogador)
+router.use('/equipe', equipe)
 
 app.use(router)
 

@@ -7,7 +7,7 @@
       <v-btn text :to="{ name: 'home' }">Inicio</v-btn>
       <v-btn text :to="{ name: 'home' }">Campeonatos</v-btn>
       <v-btn text :to="{ name: 'home' }">Partidas</v-btn>
-      <v-btn text :to="{ name: 'home' }">Equipes</v-btn>
+      <v-btn text :to="{ name: 'equipes' }">Equipes</v-btn>
       <v-btn text :to="{ name: 'jogadores' }">Jogadores</v-btn>
     </v-toolbar-items>
 

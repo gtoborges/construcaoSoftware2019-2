@@ -16,7 +16,7 @@
           <v-data-table :headers="headers" :items="jogadores" :search="search">
             <template v-slot:body="{ items }">
               <tbody>
-                <tr v-for="item in items" :key="item.nome" @click="direcionarParaPaginaDoJogador(item)">
+                <tr v-for="item in items" :key="item.idJogador" @click="direcionarParaPaginaDoJogador(item)">
                   <td>{{ item.equipe.tag }}</td>
                   <td>{{ item.apelido }}</td>
                   <td>{{ item.nomeCompleto }}</td>
@@ -97,7 +97,7 @@ export default {
         })
         vm.jogadores = resposta.data
       } catch(err) {
-        this.$swal({type: 'error', title: 'Erro inesperado!', text: 'Jogador não encontrado!'})
+        this.$swal({type: 'error', title: 'Erro inesperado!', text: 'Jogadores não encontrados!'})
       }
     },
 

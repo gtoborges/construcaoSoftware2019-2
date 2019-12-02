@@ -25,6 +25,17 @@ const routes = [
     name: 'jogador/:id/:apelido',
     props: true,
     component: () => import(/* webpackChunkName: "perfilDoJogador" */ '../views/perfilDoJogador.vue')
+  },
+  {
+    path: '/equipes',
+    name: 'equipes',
+    component: () => import(/* webpackChunkName: "equipes" */ '../views/equipes.vue')
+  },
+  {
+    path: '/equipe/:id/:tag',
+    name: 'equipe/:id/:tag',
+    props: true,
+    component: () => import(/* webpackChunkName: "perfilDoJogador" */ '../views/perfilDaEquipe.vue')
   }
 ]
 

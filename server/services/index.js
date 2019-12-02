@@ -3,8 +3,10 @@
 
 const teste = require('./teste')
 const jogador = require('./jogador')
+const equipe = require('./equipe')
 
 module.exports = {
   teste,
-  jogador
+  jogador,
+  equipe
 }
