@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     idEquipe: {
-      field: 'equipeFK',
+      field: 'idEquipeFK',
       type: DataTypes.INTEGER(11),
       allowNull: false,
       references: {

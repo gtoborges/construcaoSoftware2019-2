@@ -11,9 +11,9 @@ async function criarEquipesEJogadores(){
   try {
     let transacao = await db.sequelize.transaction({ isolationLevel: db.Sequelize.Transaction.ISOLATION_LEVELS.READ_UNCOMMITTED })
     
-    // for(equipe of equipes) {
-    //   await db.equipe.create(equipe, { transaction: transacao })
-    // }
+    for(equipe of equipes) {
+      await db.equipe.create(equipe, { transaction: transacao })
+    }
 
     for(jogador of jogadores) {
       await db.jogador.create(jogador, { transaction: transacao })
