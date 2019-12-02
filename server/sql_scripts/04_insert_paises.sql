@@ -251,4 +251,5 @@ INSERT INTO `pais` (`idPais`, `pais`) VALUES
 (249, 'VIETNAME'),
 (250, 'WALLIS E FUTUNA'),
 (251, 'ZÂMBIA'),
-(252, 'ZIMBABUÉ');
+(252, 'ZIMBABUÉ'),
+(253, 'EUROPE');

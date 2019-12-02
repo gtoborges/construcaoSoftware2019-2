@@ -20,6 +20,36 @@ equipes = {
       tag: 'EG',
       idPais: 69
     },
+    {
+      nome: 'Team Liquid',
+      tag: 'Liquid',
+      idPais: 69
+    },
+    {
+      nome: 'Vitality Esports',
+      tag: 'Vitality',
+      idPais: 76
+    },
+    {
+      nome: 'Faze Clan',
+      tag: 'Faze',
+      idPais: 253
+    },
+    {
+      nome: 'Ninjas in Pyjamas',
+      tag: 'NiP',
+      idPais: 223
+    },
+    {
+      nome: 'Fúria Esports',
+      tag: 'FURIA',
+      idPais: 33
+    },
+    {
+      nome: 'Natus Vincere',
+      tag: 'Na\'Vi',
+      idPais: 201
+    }
   ]
 }
 
