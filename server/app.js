@@ -12,12 +12,16 @@ app.use(cors())
 const teste = require('./routes/teste')
 const jogador = require('./routes/jogador')
 const equipe = require('./routes/equipe')
+const campeonato = require('./routes/campeonato')
+const partida = require('./routes/partida')
 
 //rotas da aplicação
 
 router.use('/teste', teste)
 router.use('/jogador', jogador)
 router.use('/equipe', equipe)
+router.use('/campeonato', campeonato)
+router.use('/partida', partida)
 
 app.use(router)
 

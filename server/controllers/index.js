@@ -4,9 +4,13 @@
 const teste = require('./teste')
 const jogador = require('./jogador')
 const equipe = require('./equipe')
+const campeonato = require('./campeonato')
+const partida = require('./partida')
 
 module.exports = {
   teste,
   jogador,
-  equipe
+  equipe,
+  campeonato,
+  partida
 }

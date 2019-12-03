@@ -16,6 +16,21 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
+    path: '/campeonatos',
+    name: 'campeonatos',
+    component: () => import(/* webpackChunkName: "campeonatos" */ '../views/campeonatos.vue')
+  },
+  {
+    path: '/campeonatos/:id',
+    name: 'campeonatos/:id',
+    component: () => import(/* webpackChunkName: "detalhesCampeonatos" */ '../views/detalhesCampeonato.vue')
+  },
+  {
+    path: '/partidas',
+    name: 'partidas',
+    component: () => import(/* webpackChunkName: "partidas" */ '../views/partidas.vue')
+  },
+  {
     path: '/jogadores',
     name: 'jogadores',
     component: () => import(/* webpackChunkName: "jogadores" */ '../views/jogadores.vue')

@@ -5,10 +5,11 @@
   >
     <v-flex mb-4>
       <h1 class="display-2 font-weight-bold mb-3">
-        Equipe
+        Campeonatos
       </h1>
       <p class="subheading font-weight-regular">
-        {{equipe}}
+        Campeonatos que estão rolando:
+        {{ campeonatos }}
       </p>
     </v-flex>
   </v-layout>
@@ -19,22 +20,21 @@ import api from '../services/api'
 
 let vm
 export default {
-  props: ['id', 'tag'],
   data() {
     return {
-      equipe: {}
+      campeonatos: []
     }
   },
   created() {
     vm = this
-    vm.buscarEquipe()
+    vm.buscarCampeonatos()
   },
   methods: {
-    async buscarEquipe() {
-      let resposta = await api.equipe.buscar(this.id)
+    async buscarCampeonatos() {
+      let resposta = await api.campeonato.buscar()
 
       console.log(resposta.data)
-      vm.equipe = resposta.data
+      vm.campeonatos = resposta.data
     }
   }
 
