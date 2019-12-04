@@ -10,22 +10,26 @@ const buscarPartida = async (idPartida) => {
   }
 
   let opcoes = {
-    // where: {
-    //   idJogador: idJogador
-    // },
-    // include: [
-    //   {
-    //     model: db.paises,
-    //     as: 'paisDeOrigem'
-    //   },
-    //   {
-    //     model: db.equipe,
-    //     as: 'equipe'
-    //   }
-    // ]
+    where: {
+      idPartida: idPartida
+    },
+    include: [
+      {
+        model: db.equipe,
+        as: 'equipeA'
+      },
+      {
+        model: db.equipe,
+        as: 'equipeB'
+      },
+      {
+        model: db.mapas,
+        as: 'mapaDaPartida'
+      }
+    ]
   }
 
-  let partida = await db.partida.findOne(opcoes)
+  let partida = await db.partidas.findOne(opcoes)
   if(!partida) {
     throw new Error('Jogador não encontrado!')
   }
@@ -36,23 +40,16 @@ const buscarPartida = async (idPartida) => {
 const listarPartidas = async () => {
 
   let opcoes = {
-    // attributes: ['idJogador', 'nome', 'sobrenome', 'apelido', 'dataNascimento'],
-    // include: [
-    //   {
-    //     model: db.paises,
-    //     as: 'paisDeOrigem',
-    //     attributes: ['pais']
-    //   },
-    //   {
-    //     model: db.equipe,
-    //     as: 'equipe',
-    //     attributes: ['nome', 'tag']
-    //   }
-    // ],
-    // order: [['nome', 'ASC']]
+    include: [
+      {
+        model: db.mapas,
+        as: 'mapaDaPartida'
+      }
+    ],
+    order: [['data', 'DESC']]
   }
 
-  return db.partida.findAll(opcoes)
+  return db.partidas.findAll(opcoes)
 }
 
 module.exports = {

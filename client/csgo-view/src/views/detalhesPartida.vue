@@ -8,7 +8,7 @@
         Campeonato detalhes
       </h1>
       <p class="subheading font-weight-regular">
-        {{ campeonato }}
+        {{ partida }}
       </p>
     </v-flex>
   </v-layout>
@@ -22,19 +22,19 @@ export default {
   props: ['id'],
   data() {
     return {
-      campeonato: {}
+      partida: {}
     }
   },
   created() {
     vm = this
-    vm.buscarCampeonato()
+    vm.buscarPartida()
   },
   methods: {
-    async buscarCampeonato() {
-      let resposta = await api.campeonato.buscar(this.id)
+    async buscarPartida() {
+      let resposta = await api.partida.buscar(this.id)
 
       console.log(resposta.data)
-      vm.campeonato = resposta.data
+      vm.partida = resposta.data
     }
   }
 

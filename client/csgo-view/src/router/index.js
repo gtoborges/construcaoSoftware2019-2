@@ -14,14 +14,21 @@ const routes = [
     component: () => import(/* webpackChunkName: "campeonatos" */ '../views/campeonatos.vue')
   },
   {
-    path: '/campeonatos/:id',
-    name: 'campeonatos/:id',
+    path: '/campeonato/:id',
+    name: 'campeonato/:id',
+    props: true,
     component: () => import(/* webpackChunkName: "detalhesCampeonatos" */ '../views/detalhesCampeonato.vue')
   },
   {
     path: '/partidas',
     name: 'partidas',
     component: () => import(/* webpackChunkName: "partidas" */ '../views/partidas.vue')
+  },
+  {
+    path: '/partida/:id',
+    name: '/partida/:id',
+    props: true,
+    component: () => import(/* webpackChunkName: "partidas" */ '../views/detalhesPartida.vue')
   },
   {
     path: '/jogadores',

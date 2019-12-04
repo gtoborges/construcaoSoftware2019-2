@@ -32,6 +32,7 @@ db.equipe.hasMany(db.jogador, {foreignKey: 'idEquipe', targetKey: 'idJogador', s
 db.campeonato.hasOne(db.paises, {foreignKey: 'idPais', targetKey: 'idCampeonato', sourceKey: 'idPais', as: 'paisDeOrigem'})
 db.campeonato.hasMany(db.distribuicaoPremiacaoCampeonato, {foreignKey: 'idCampeonato', targetKey: 'idCampeonato', sourceKey: 'idCampeonato', as: 'distribuicao'})
 db.campeonato.hasMany(db.equipesCampeonato, {foreignKey: 'idCampeonato', targetKey: 'idCampeonato', sourceKey: 'idCampeonato', as: 'equipesParticipantes'})
+db.campeonato.hasMany(db.partidas, {foreignKey: 'idCampeonato', targetKey: 'idCampeonato', sourceKey: 'idCampeonato', as: 'partidasDoCampeonato'})
 
 db.equipesCampeonato.hasOne(db.equipe, {foreignKey: 'idEquipe', targetKey: 'idEquipe', sourceKey: 'idEquipe', as: 'equipe'})
 db.equipesCampeonato.hasOne(db.jogador, {foreignKey: 'idJogador', targetKey: 'idJogador1', sourceKey: 'idJogador1', as: 'jogador1'})
@@ -39,6 +40,11 @@ db.equipesCampeonato.hasOne(db.jogador, {foreignKey: 'idJogador', targetKey: 'id
 db.equipesCampeonato.hasOne(db.jogador, {foreignKey: 'idJogador', targetKey: 'idJogador3', sourceKey: 'idJogador3', as: 'jogador3'})
 db.equipesCampeonato.hasOne(db.jogador, {foreignKey: 'idJogador', targetKey: 'idJogador4', sourceKey: 'idJogador4', as: 'jogador4'})
 db.equipesCampeonato.hasOne(db.jogador, {foreignKey: 'idJogador', targetKey: 'idJogador5', sourceKey: 'idJogador5', as: 'jogador5'})
+
+db.partidas.hasOne(db.equipe, {foreignKey: 'idEquipe', targetKey: 'idEquipe', sourceKey: 'idEquipeA', as: 'equipeA'})
+db.partidas.hasOne(db.equipe, {foreignKey: 'idEquipe', targetKey: 'idEquipe', sourceKey: 'idEquipeB', as: 'equipeB'})
+db.partidas.hasOne(db.mapas, {foreignKey: 'idMapa', targetKey: 'idMapa', sourceKey: 'idMapa', as: 'mapaDaPartida'})
+
 
 
 

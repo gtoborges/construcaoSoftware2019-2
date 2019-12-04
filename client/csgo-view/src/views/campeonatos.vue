@@ -11,6 +11,9 @@
         Campeonatos que estão rolando:
         {{ campeonatos }}
       </p>
+      <div v-for="campeonato in campeonatos" :key="campeonato.idCampeonato">
+        <v-btn dark style="margin-top: 20px" @click="direcionarParaPaginaDoCampeonato(campeonato)">{{ campeonato.nome }}</v-btn>
+      </div>
     </v-flex>
   </v-layout>
 </template>
@@ -35,6 +38,19 @@ export default {
 
       console.log(resposta.data)
       vm.campeonatos = resposta.data
+    },
+    async direcionarParaPaginaDoCampeonato(campeonato){
+      let resultado = await this.$swal({
+        type: 'info', 
+        text: `Deseja ver os detalhes de ${campeonato.nome}?`,
+        showCloseButton: true,
+        showCancelButton: true,
+      })
+
+      if(resultado.value) {
+        vm.$router.push({ path: `/campeonato/${campeonato.idCampeonato}`, params: {id: campeonato.idCampeonato} })
+      }
+
     }
   }
 

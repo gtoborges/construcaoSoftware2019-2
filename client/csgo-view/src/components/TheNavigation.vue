@@ -1,7 +1,7 @@
 <template>
   <v-app-bar app color="blue-grey darken-3" dark>
 
-    <v-img src="../assets/csgo-logo.png" max-height="100" max-width="130" @click="$router.push({ name: 'home'})"></v-img>
+    <v-img src="../assets/csgo-logo.png" max-height="100" max-width="130"></v-img>
 
     <v-toolbar-items>
       <v-btn text :to="{ name: 'home' }">Inicio</v-btn>

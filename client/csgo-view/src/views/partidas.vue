@@ -8,8 +8,11 @@
         Partidas
       </h1>
       <p class="subheading font-weight-regular">
-        Partidas que estão rolando:
+        {{ partidas }}
       </p>
+      <div v-for="partida in partidas" :key="partida.idPartida">
+        <v-btn dark style="margin-top: 20px" @click="direcionarParaPaginaDaPartida(partida)">{{ partida.idPartida }} - {{$moment(partida.data).format("DD/MM/YYYY HH:mm:ss")}}</v-btn>
+      </div>
     </v-flex>
   </v-layout>
 </template>
@@ -22,7 +25,7 @@ export default {
   props: ['id'],
   data() {
     return {
-      partida: {}
+      partidas: {}
     }
   },
   created() {
@@ -34,7 +37,19 @@ export default {
       let resposta = await api.partida.buscar(this.id)
 
       console.log(resposta.data)
-      vm.partida = resposta.data
+      vm.partidas = resposta.data
+    },
+    async direcionarParaPaginaDaPartida(partida){
+      let resultado = await this.$swal({
+        type: 'info', 
+        text: `Deseja ver os detalhes de ${partida.idPartida}?`,
+        showCloseButton: true,
+        showCancelButton: true,
+      })
+
+      if(resultado.value) {
+        vm.$router.push({ path: `/partida/${partida.idPartida}`, params: {id: partida.idPartida} })
+      }
     }
   }
 

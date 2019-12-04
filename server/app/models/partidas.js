@@ -49,7 +49,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     melhorDe: {
-      type: DataTypes.ENUM('1', '2', '3', '5'),
+      type: DataTypes.ENUM(1, 2, 3, 5),
       allowNull: false
     },
     numeroPartida: {
