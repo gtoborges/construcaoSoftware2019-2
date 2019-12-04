@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     idEquipe: {
-      field: 'equipeFK',
+      field: 'idEquipeFK',
       type: DataTypes.INTEGER(11),
       allowNull: false,
       references: {
@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DATEONLY,
       allowNull: false
     },
-    dataNascimento: {
+    dataSaida: {
       type: DataTypes.DATEONLY,
       allowNull: true
     },

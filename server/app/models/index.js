@@ -25,6 +25,8 @@ Object.keys(db).forEach((modelName) => {
 
 db.jogador.hasOne(db.paises, {foreignKey: 'idPais', targetKey: 'idJogador', sourceKey: 'idPais', as: 'paisDeOrigem'})
 db.jogador.hasOne(db.equipe, {foreignKey: 'idEquipe', targetKey: 'idJogador', sourceKey: 'idEquipe', as: 'equipe'})
+db.jogador.hasMany(db.historicoJogador, {foreignKey: 'idJogador', targetKey: 'idJogador', sourceKey: 'idJogador', as: 'historico'})
+db.historicoJogador.hasOne(db.equipe, {foreignKey: 'idEquipe', targetKey: 'idEquipe', sourceKey: 'idEquipe', as: 'equipe'})
 
 db.equipe.hasOne(db.paises, {foreignKey: 'idPais', targetKey: 'idEquipe', sourceKey: 'idPais', as: 'paisDeOrigem'})
 db.equipe.hasMany(db.jogador, {foreignKey: 'idEquipe', targetKey: 'idJogador', sourceKey: 'idEquipe', as: 'jogadores'})

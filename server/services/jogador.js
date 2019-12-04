@@ -21,6 +21,16 @@ const buscarJogador = async (idJogador) => {
       {
         model: db.equipe,
         as: 'equipe'
+      },
+      {
+        model: db.historicoJogador,
+        as: 'historico',
+        include: [
+          {
+            model: db.equipe,
+            as: 'equipe'
+          }
+        ]
       }
     ]
   }

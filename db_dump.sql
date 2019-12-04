@@ -177,7 +177,7 @@ CREATE TABLE `historicoJogador` (
   KEY `idEquipeFK` (`idEquipeFK`),
   CONSTRAINT `historicoJogador_ibfk_1` FOREIGN KEY (`idJogadorFK`) REFERENCES `jogador` (`idJogador`),
   CONSTRAINT `historicoJogador_ibfk_2` FOREIGN KEY (`idEquipeFK`) REFERENCES `equipe` (`idEquipe`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -186,6 +186,7 @@ CREATE TABLE `historicoJogador` (
 
 LOCK TABLES `historicoJogador` WRITE;
 /*!40000 ALTER TABLE `historicoJogador` DISABLE KEYS */;
+INSERT INTO `historicoJogador` VALUES (1,17,1,'2016-10-25','2017-08-10','2019-12-04 17:48:00','2019-12-04 17:48:00'),(2,17,5,'2017-10-10','2018-11-25','2019-12-04 17:48:00','2019-12-04 17:48:00'),(3,17,4,'2019-08-10',NULL,'2019-12-04 17:48:00','2019-12-04 17:48:00');
 /*!40000 ALTER TABLE `historicoJogador` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -378,4 +379,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-04  1:05:26
+-- Dump completed on 2019-12-04 18:04:35
